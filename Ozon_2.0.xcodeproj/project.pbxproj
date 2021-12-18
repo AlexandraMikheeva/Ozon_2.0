@@ -13,6 +13,7 @@
 		FC935709276D62B1001A3BA0 /* ExpressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC935708276D62B1001A3BA0 /* ExpressViewController.swift */; };
 		FCAC4CFE276D7BFF00638725 /* MyOzonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC4CFD276D7BFF00638725 /* MyOzonViewController.swift */; };
 		FCAC4D00276D7E7F00638725 /* NewItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC4CFF276D7E7F00638725 /* NewItemCell.swift */; };
+		FCAC4D02276D896F00638725 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC4D01276D896F00638725 /* Item.swift */; };
 		FCCDBE512766A3230015D919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDBE502766A3230015D919 /* AppDelegate.swift */; };
 		FCCDBE532766A3230015D919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDBE522766A3230015D919 /* SceneDelegate.swift */; };
 		FCCDBE552766A3230015D919 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDBE542766A3230015D919 /* FavoritesViewController.swift */; };
@@ -47,6 +48,7 @@
 		FC935708276D62B1001A3BA0 /* ExpressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressViewController.swift; sourceTree = "<group>"; };
 		FCAC4CFD276D7BFF00638725 /* MyOzonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOzonViewController.swift; sourceTree = "<group>"; };
 		FCAC4CFF276D7E7F00638725 /* NewItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemCell.swift; sourceTree = "<group>"; };
+		FCAC4D01276D896F00638725 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FCCDBE4D2766A3230015D919 /* Ozon_2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ozon_2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCDBE502766A3230015D919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCCDBE522766A3230015D919 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				FC935702276D5A4B001A3BA0 /* BinViewController.swift */,
 				FC935704276D5B14001A3BA0 /* TabBarController.swift */,
 				FC935706276D6235001A3BA0 /* HomeViewController.swift */,
+				FCAC4D01276D896F00638725 /* Item.swift */,
 			);
 			path = Ozon_2.0;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCAC4D02276D896F00638725 /* Item.swift in Sources */,
 				FCAC4CFE276D7BFF00638725 /* MyOzonViewController.swift in Sources */,
 				FCCDBE552766A3230015D919 /* FavoritesViewController.swift in Sources */,
 				FCCDBE512766A3230015D919 /* AppDelegate.swift in Sources */,

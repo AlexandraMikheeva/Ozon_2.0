@@ -62,7 +62,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
         
         let binVC = BinViewController()
         let navController3 = UINavigationController(rootViewController:binVC)
-        binVC.tabBarItem = UITabBarItem(title: "Bin", image: UIImage(named: "tab-bin"), tag: 2)
+        binVC.tabBarItem = UITabBarItem(title: "Trash", image: UIImage(named: "tab-trash"), tag: 2)
 
         let favoritesVC = FavoritesViewController()
         let navController4 = UINavigationController(rootViewController:favoritesVC)

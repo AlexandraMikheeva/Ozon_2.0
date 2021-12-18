@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "open-bin1x.png",
+      "filename" : "catalog.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "open-bin2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "open-bin3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

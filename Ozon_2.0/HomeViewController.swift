@@ -10,10 +10,23 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let data = [
+        Item(title: "Catalog", image: UIImage(named: "catalog")!),
+        Item(title: "Installments", image: UIImage(named: "installments")!),
+        Item(title: "Offers", image: UIImage(named: "offers")!),
+        Item(title: "Ozon for Business", image: UIImage(named: "OzonForBusiness")!),
+        Item(title: "TOP Fashion", image: UIImage(named: "TOPFashion")!),
+        Item(title: "Electronics", image: UIImage(named: "electronics")!),
+        Item(title: "Clothes and Shoes", image: UIImage(named: "clothesAndShoes")!),
+        Item(title: "Daily demand", image: UIImage(named: "dailyDemand")!),
+        Item(title: "Home and Garden", image: UIImage(named: "homeAndGarden")!),
+        Item(title: "Ozon Discount", image: UIImage(named: "OzonDiscount")!)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -48,16 +61,17 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewItemCell
-        cell.backgroundColor = .green
+        cell.backgroundColor = .white
+        cell.data = self.data[indexPath.row]
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/6, height: collectionView.frame.height/10)
+        return CGSize(width: collectionView.frame.width/5.7, height: collectionView.frame.height/6.5)
     }
 }
