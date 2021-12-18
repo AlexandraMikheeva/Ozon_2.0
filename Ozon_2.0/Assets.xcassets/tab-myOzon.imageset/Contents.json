@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "history1x.png",
+      "filename" : "myOzon1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "history2x.png",
+      "filename" : "myOzon2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "history3x.png",
+      "filename" : "myOzon3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
