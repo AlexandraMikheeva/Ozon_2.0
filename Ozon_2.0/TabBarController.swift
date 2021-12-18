@@ -23,6 +23,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
         
         setupViewControllers()
         setupTabBarIcons()
+        
     }
     
     func setupTabBarIcons() {
