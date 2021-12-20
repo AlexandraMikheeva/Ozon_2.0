@@ -10,10 +10,34 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+
+        if AuthManager.shared.isSignedIn {
+            window?.rootViewController = TabBarController()
+        }
+        else {
+            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+            navVC.navigationBar.prefersLargeTitles = true
+            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window?.rootViewController = navVC
+        }
+        
+        window?.makeKeyAndVisible()
+//        window?.windowScene = window
+        
+//        self.window = window
+        // Create an instance of the main view controller and a navigation controller
+//        let mainController = TabBarController()
+//        let navigationController = UINavigationController(rootViewController: mainController)
+//
+//        // Tell the window to load the main controller as it's root view
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
+//        window?.windowScene = windowScene        // Override point for customization after application launch.
         return true
     }
 

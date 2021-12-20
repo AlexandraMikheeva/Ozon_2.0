@@ -61,7 +61,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
         expressVC.tabBarItem = UITabBarItem(title: "Express", image: UIImage(named: "tab-express"), tag: 1)
         
         let trashVC = TrashViewController()
+        trashVC.title = "Trash"
         let navController3 = UINavigationController(rootViewController:trashVC)
+        navController3.navigationBar.prefersLargeTitles = true
         trashVC.tabBarItem = UITabBarItem(title: "Trash", image: UIImage(named: "tab-trash"), tag: 2)
 
         let favoritesVC = FavoritesViewController()

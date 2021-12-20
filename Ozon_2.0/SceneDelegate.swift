@@ -17,12 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        // Create an instance of the main view controller and a navigation controller
-        let mainController = TabBarController()
-        let navigationController = UINavigationController(rootViewController: mainController)
+        if AuthManager.shared.isSignedIn {
+            window?.rootViewController = TabBarController()
+        }
+        else {
+            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+            navVC.navigationBar.prefersLargeTitles = true
+            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window?.rootViewController = navVC
+        }
 
-        // Tell the window to load the main controller as it's root view
-        window?.rootViewController = navigationController
+//        // Create an instance of the main view controller and a navigation controller
+//        let mainController = TabBarController()
+//        let navigationController = UINavigationController(rootViewController: mainController)
+//
+//        // Tell the window to load the main controller as it's root view
+//        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }

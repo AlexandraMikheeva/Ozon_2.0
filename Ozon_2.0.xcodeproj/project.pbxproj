@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FC4DA691276FDF31009AE0E9 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DA690276FDF31009AE0E9 /* CatalogViewController.swift */; };
-		FC4DA6D52770093D009AE0E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4DA6D42770093D009AE0E9 /* Main.storyboard */; };
 		FC4DA6D727701273009AE0E9 /* HomeAndGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DA6D627701273009AE0E9 /* HomeAndGardenViewController.swift */; };
+		FC83AAA827707FEA0058FDCC /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83AAA727707FEA0058FDCC /* AuthManager.swift */; };
+		FC83AAAA277083FF0058FDCC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83AAA9277083FF0058FDCC /* WelcomeViewController.swift */; };
+		FC83AAAC27708C3C0058FDCC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83AAAB27708C3C0058FDCC /* AuthViewController.swift */; };
+		FC83AAAE277091F80058FDCC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83AAAD277091F80058FDCC /* Extensions.swift */; };
 		FC935703276D5A4B001A3BA0 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC935702276D5A4B001A3BA0 /* TrashViewController.swift */; };
 		FC935705276D5B14001A3BA0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC935704276D5B14001A3BA0 /* TabBarController.swift */; };
 		FC935707276D6235001A3BA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC935706276D6235001A3BA0 /* HomeViewController.swift */; };
@@ -46,8 +49,11 @@
 
 /* Begin PBXFileReference section */
 		FC4DA690276FDF31009AE0E9 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
-		FC4DA6D42770093D009AE0E9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FC4DA6D627701273009AE0E9 /* HomeAndGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndGardenViewController.swift; sourceTree = "<group>"; };
+		FC83AAA727707FEA0058FDCC /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FC83AAA9277083FF0058FDCC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FC83AAAB27708C3C0058FDCC /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		FC83AAAD277091F80058FDCC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FC935702276D5A4B001A3BA0 /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 		FC935704276D5B14001A3BA0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FC935706276D6235001A3BA0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,8 @@
 			children = (
 				FCCDBE502766A3230015D919 /* AppDelegate.swift */,
 				FCCDBE522766A3230015D919 /* SceneDelegate.swift */,
+				FC83AAA9277083FF0058FDCC /* WelcomeViewController.swift */,
+				FC83AAAD277091F80058FDCC /* Extensions.swift */,
 				FC935708276D62B1001A3BA0 /* ExpressViewController.swift */,
 				FCCDBE542766A3230015D919 /* FavoritesViewController.swift */,
 				FCAC4CFF276D7E7F00638725 /* NewItemCell.swift */,
@@ -128,10 +136,11 @@
 				FCCDBE5E2766A3250015D919 /* Info.plist */,
 				FC935702276D5A4B001A3BA0 /* TrashViewController.swift */,
 				FC935704276D5B14001A3BA0 /* TabBarController.swift */,
-				FC4DA6D42770093D009AE0E9 /* Main.storyboard */,
+				FC83AAAB27708C3C0058FDCC /* AuthViewController.swift */,
 				FC935706276D6235001A3BA0 /* HomeViewController.swift */,
 				FC4DA6D627701273009AE0E9 /* HomeAndGardenViewController.swift */,
 				FC4DA690276FDF31009AE0E9 /* CatalogViewController.swift */,
+				FC83AAA727707FEA0058FDCC /* AuthManager.swift */,
 				FCAC4D01276D896F00638725 /* Item.swift */,
 			);
 			path = Ozon_2.0;
@@ -258,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC4DA6D52770093D009AE0E9 /* Main.storyboard in Resources */,
 				FCCDBE5D2766A3250015D919 /* LaunchScreen.storyboard in Resources */,
 				FCCDBE5A2766A3250015D919 /* Assets.xcassets in Resources */,
 			);
@@ -288,15 +296,19 @@
 				FC4DA6D727701273009AE0E9 /* HomeAndGardenViewController.swift in Sources */,
 				FCAC4D02276D896F00638725 /* Item.swift in Sources */,
 				FC4DA691276FDF31009AE0E9 /* CatalogViewController.swift in Sources */,
+				FC83AAA827707FEA0058FDCC /* AuthManager.swift in Sources */,
 				FCAC4CFE276D7BFF00638725 /* MyOzonViewController.swift in Sources */,
 				FCCDBE552766A3230015D919 /* FavoritesViewController.swift in Sources */,
 				FCCDBE512766A3230015D919 /* AppDelegate.swift in Sources */,
+				FC83AAAC27708C3C0058FDCC /* AuthViewController.swift in Sources */,
 				FCCDBE532766A3230015D919 /* SceneDelegate.swift in Sources */,
 				FC935709276D62B1001A3BA0 /* ExpressViewController.swift in Sources */,
 				FCAC4D00276D7E7F00638725 /* NewItemCell.swift in Sources */,
+				FC83AAAE277091F80058FDCC /* Extensions.swift in Sources */,
 				FC935705276D5B14001A3BA0 /* TabBarController.swift in Sources */,
 				FC935703276D5A4B001A3BA0 /* TrashViewController.swift in Sources */,
 				FC935707276D6235001A3BA0 /* HomeViewController.swift in Sources */,
+				FC83AAAA277083FF0058FDCC /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

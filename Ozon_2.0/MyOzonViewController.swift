@@ -13,7 +13,7 @@ class MyOzonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .black
+        view.backgroundColor = .white
     }
 
 }
