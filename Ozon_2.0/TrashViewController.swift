@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class BinViewController: UIViewController {
+class TrashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

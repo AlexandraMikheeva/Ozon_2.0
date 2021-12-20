@@ -1,15 +1,14 @@
 //
-//  HomeViewController.swift
+//  CatalogViewController.swift
 //  Ozon_2.0
 //
-//  Created by Михеева Александра Германовна on 18.12.2021.
+//  Created by Михеева Александра Германовна on 20.12.2021.
 //
 
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class CatalogViewController: UIViewController {
     
     let data = [
         Item(title: "Catalog", image: UIImage(named: "catalog")!),
@@ -23,27 +22,6 @@ class HomeViewController: UIViewController {
         Item(title: "Home and Garden", image: UIImage(named: "homeAndGarden")!),
         Item(title: "Ozon Discount", image: UIImage(named: "OzonDiscount")!),
         
-        Item(title: "Catalog", image: UIImage(named: "catalog")!),
-        Item(title: "Installments", image: UIImage(named: "installments")!),
-        Item(title: "Offers", image: UIImage(named: "offers")!),
-        Item(title: "Ozon for Business", image: UIImage(named: "OzonForBusiness")!),
-        Item(title: "TOP Fashion", image: UIImage(named: "TOPFashion")!),
-        Item(title: "Electronics", image: UIImage(named: "electronics")!),
-        Item(title: "Clothes and Shoes", image: UIImage(named: "clothesAndShoes")!),
-        Item(title: "Daily demand", image: UIImage(named: "dailyDemand")!),
-        Item(title: "Home and Garden", image: UIImage(named: "homeAndGarden")!),
-        Item(title: "Ozon Discount", image: UIImage(named: "OzonDiscount")!),
-        
-        Item(title: "Catalog", image: UIImage(named: "catalog")!),
-        Item(title: "Installments", image: UIImage(named: "installments")!),
-        Item(title: "Offers", image: UIImage(named: "offers")!),
-        Item(title: "Ozon for Business", image: UIImage(named: "OzonForBusiness")!),
-        Item(title: "TOP Fashion", image: UIImage(named: "TOPFashion")!),
-        Item(title: "Electronics", image: UIImage(named: "electronics")!),
-        Item(title: "Clothes and Shoes", image: UIImage(named: "clothesAndShoes")!),
-        Item(title: "Daily demand", image: UIImage(named: "dailyDemand")!),
-        Item(title: "Home and Garden", image: UIImage(named: "homeAndGarden")!),
-        Item(title: "Ozon Discount", image: UIImage(named: "OzonDiscount")!)
     ]
     
     override func viewDidLoad() {
@@ -53,9 +31,7 @@ class HomeViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-//        collectionView.allowsMultipleSelection = false
-//        collectionView.selectItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), animated: false, scrollPosition: .None)
+        collectionView.register(NewItemCell.self, forCellWithReuseIdentifier: "cell")
         
         setViews()
         
@@ -85,7 +61,7 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -94,9 +70,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewItemCell
         cell.backgroundColor = .white
         cell.data = self.data[indexPath.row]
-//        if cell.isSelected {
-//            cell.backgroundColor = UIColor.gray
-//        }
         return cell
     }
 
@@ -104,15 +77,29 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return CGSize(width: collectionView.frame.width/5.7, height: collectionView.frame.height/6.5)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt didSelectItemAtAtIndexPath:IndexPath) {
-        let catalogVC = CatalogViewController()
-        let navController1 = UINavigationController(rootViewController:catalogVC)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let homeAndGardenVC = HomeAndGardenViewController()
+        let navController1 = UINavigationController(rootViewController:homeAndGardenVC)
+//        navController1.selectedIndex = indexPath.row
         self.present(navController1, animated: true, completion: nil)
     }
     
-//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewItemCell
-//        cell.imageView.image = UIImage(named: data.[indexPath.row])
-//        return cell
-//    }
+    func scrollToLast() {
+        guard self.collectionView.numberOfSections > 0 else {
+            return
+        }
+
+        let lastSection = self.collectionView.numberOfSections - 1
+
+        guard self.collectionView.numberOfItems(inSection: lastSection) > 0 else {
+            return
+        }
+
+        let lastItemIndexPath = IndexPath(item: self.collectionView.numberOfItems(inSection: lastSection) - 1,
+                                          section: lastSection)
+        self.collectionView.scrollToItem(at: lastItemIndexPath, at: .right, animated: true)
+    }
+    
+    
+    
 }

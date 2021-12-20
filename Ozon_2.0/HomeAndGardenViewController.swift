@@ -1,28 +1,16 @@
 //
-//  HomeViewController.swift
+//  HomeAndGardenViewController.swift
 //  Ozon_2.0
 //
-//  Created by Михеева Александра Германовна on 18.12.2021.
+//  Created by Михеева Александра Германовна on 20.12.2021.
 //
 
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeAndGardenViewController: UIViewController {
 
-    
     let data = [
-        Item(title: "Catalog", image: UIImage(named: "catalog")!),
-        Item(title: "Installments", image: UIImage(named: "installments")!),
-        Item(title: "Offers", image: UIImage(named: "offers")!),
-        Item(title: "Ozon for Business", image: UIImage(named: "OzonForBusiness")!),
-        Item(title: "TOP Fashion", image: UIImage(named: "TOPFashion")!),
-        Item(title: "Electronics", image: UIImage(named: "electronics")!),
-        Item(title: "Clothes and Shoes", image: UIImage(named: "clothesAndShoes")!),
-        Item(title: "Daily demand", image: UIImage(named: "dailyDemand")!),
-        Item(title: "Home and Garden", image: UIImage(named: "homeAndGarden")!),
-        Item(title: "Ozon Discount", image: UIImage(named: "OzonDiscount")!),
-        
         Item(title: "Catalog", image: UIImage(named: "catalog")!),
         Item(title: "Installments", image: UIImage(named: "installments")!),
         Item(title: "Offers", image: UIImage(named: "offers")!),
@@ -54,11 +42,8 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-//        collectionView.allowsMultipleSelection = false
-//        collectionView.selectItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), animated: false, scrollPosition: .None)
-        
         setViews()
-        
+                
     }
     
     func setViews() {
@@ -85,7 +70,7 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension HomeAndGardenViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -94,25 +79,29 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewItemCell
         cell.backgroundColor = .white
         cell.data = self.data[indexPath.row]
-//        if cell.isSelected {
-//            cell.backgroundColor = UIColor.gray
-//        }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/5.7, height: collectionView.frame.height/6.5)
+        return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.height/6)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt didSelectItemAtAtIndexPath:IndexPath) {
-        let catalogVC = CatalogViewController()
-        let navController1 = UINavigationController(rootViewController:catalogVC)
-        self.present(navController1, animated: true, completion: nil)
+    func scrollToLast() {
+        guard self.collectionView.numberOfSections > 0 else {
+            return
+        }
+
+        let lastSection = self.collectionView.numberOfSections - 1
+
+        guard self.collectionView.numberOfItems(inSection: lastSection) > 0 else {
+            return
+        }
+
+        let lastItemIndexPath = IndexPath(item: self.collectionView.numberOfItems(inSection: lastSection) - 1,
+                                          section: lastSection)
+        self.collectionView.scrollToItem(at: lastItemIndexPath, at: .bottom, animated: true)
     }
     
-//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewItemCell
-//        cell.imageView.image = UIImage(named: data.[indexPath.row])
-//        return cell
-//    }
+    
+    
 }

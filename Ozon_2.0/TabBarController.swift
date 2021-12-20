@@ -12,7 +12,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
 
     var homeItemImageView: UIImageView!
     var expressItemImageView: UIImageView!
-    var binItemImageView: UIImageView!
+    var trashItemImageView: UIImageView!
     var favoritesItemImageView: UIImageView!
     var myOzonItemImageView: UIImageView!
     
@@ -30,7 +30,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
 
         let homeItemView = self.tabBar.subviews[0]
         let expressItemView = self.tabBar.subviews[1]
-        let binItemView = self.tabBar.subviews[2]
+        let trashItemView = self.tabBar.subviews[2]
         let favoritesItemView = self.tabBar.subviews[3]
         let myOzonItemView = self.tabBar.subviews[4]
 
@@ -40,8 +40,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
         self.expressItemImageView = (expressItemView.subviews.first as! UIImageView)
         self.expressItemImageView.contentMode = .center
         
-        self.binItemImageView = (binItemView.subviews.first as! UIImageView)
-        self.binItemImageView.contentMode = .center
+        self.trashItemImageView = (trashItemView.subviews.first as! UIImageView)
+        self.trashItemImageView.contentMode = .center
 
         self.favoritesItemImageView = (favoritesItemView.subviews.first as! UIImageView)
         self.favoritesItemImageView.contentMode = .center
@@ -60,9 +60,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate{
         let navController2 = UINavigationController(rootViewController:expressVC)
         expressVC.tabBarItem = UITabBarItem(title: "Express", image: UIImage(named: "tab-express"), tag: 1)
         
-        let binVC = BinViewController()
-        let navController3 = UINavigationController(rootViewController:binVC)
-        binVC.tabBarItem = UITabBarItem(title: "Trash", image: UIImage(named: "tab-trash"), tag: 2)
+        let trashVC = TrashViewController()
+        let navController3 = UINavigationController(rootViewController:trashVC)
+        trashVC.tabBarItem = UITabBarItem(title: "Trash", image: UIImage(named: "tab-trash"), tag: 2)
 
         let favoritesVC = FavoritesViewController()
         let navController4 = UINavigationController(rootViewController:favoritesVC)
